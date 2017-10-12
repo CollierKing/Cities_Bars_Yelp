@@ -11805,58 +11805,7 @@ $( document ).ready(function(){
 <body>
   <div tabindex="-1" id="notebook" class="border-box-sizing">
     <div class="container" id="notebook-container">
-<style>
-    .yourDiv {position: fixed;top: 0px; left: 200px; background: transparent;height: 20%;width: 20%; padding: 5px; z-index: 10000}
-</style>
 
-<!--
-HTML code to create the sidebar, menu and independent popup window.
--->
-
-<script>
-function showthis(url) {
-	window.open(url, "pres", "toolbar=yes,scrollbars=yes,resizable=yes,top=10,left=400,width=500,height=500");
-	return(false);
-}
-</script>
-
-<div class=yourDiv>
-    <form action="javascript:code_toggle()"><input type="submit" id="toggleButton" value="Show Code"></form>
-</div><!--
-Creates pre-loader and 'hide code' button
--->
-
-
-<script>
-  function code_toggle() {
-    if (code_shown){
-      $('div.input').hide('500');
-      $('#toggleButton').val('Show Code')
-    } else {
-      $('div.input').show('500');
-      $('#toggleButton').val('Hide Code')
-    }
-    code_shown = !code_shown
-  }
-
-  $( document ).ready(function(){
-    code_shown=false;
-    $('div.input').hide()
-  });
-</script>
-<!--
-Remove notebook shadow border
--->
-<style>
-
-#notebook-container {
-    box-shadow: none;
-    -webkit-box-shadow: none
-}
-
-</style><style>
-div.prompt {display:none}
-</style>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
@@ -52073,7 +52022,58 @@ AAAAAElFTkSuQmCC
 </div>
 </div>
 
-</div>
+</div><style>
+    .yourDiv {position: fixed;top: 0px; left: 200px; background: transparent;height: 20%;width: 20%; padding: 5px; z-index: 10000}
+</style>
+
+<!--
+HTML code to create the sidebar, menu and independent popup window.
+-->
+
+<script>
+function showthis(url) {
+	window.open(url, "pres", "toolbar=yes,scrollbars=yes,resizable=yes,top=10,left=400,width=500,height=500");
+	return(false);
+}
+</script>
+
+<div class=yourDiv>
+    <form action="javascript:code_toggle()"><input type="submit" id="toggleButton" value="Show Code"></form>
+</div><!--
+Creates pre-loader and 'hide code' button
+-->
+
+
+<script>
+  function code_toggle() {
+    if (code_shown){
+      $('div.input').hide('500');
+      $('#toggleButton').val('Show Code')
+    } else {
+      $('div.input').show('500');
+      $('#toggleButton').val('Hide Code')
+    }
+    code_shown = !code_shown
+  }
+
+  $( document ).ready(function(){
+    code_shown=false;
+    $('div.input').hide()
+  });
+</script>
+<!--
+Remove notebook shadow border
+-->
+<style>
+
+#notebook-container {
+    box-shadow: none;
+    -webkit-box-shadow: none
+}
+
+</style><style>
+div.prompt {display:none}
+</style>
     </div>
   </div>
 </body>
